@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "outDir": "./built",
+      "allowJs": true,
+      "target": "es5",
+      "paths": {
+        "@constants/*": ["./src/constants/*"],
+        "@database/*": ["./src/database/*"],
+        "@interfaces/*": ["./src/types/*"],
+        "@mocks/*": ["./src/mocks/*"],
+        "@schemas/*": ["./src/schemas/*"],
+        "@services/*": ["./src/services/*"],
+        "@utils/*": ["./src/utils/*"],
+      }
+    },
+    "include": ["./src/**/*"]
+  }

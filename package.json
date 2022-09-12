@@ -1,0 +1,59 @@
+{
+  "name": "qa-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "lint:fix": "eslint --fix src  --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "prettify": "prettier --write \"./**/*.{ts,js,json,md}\""
+  },
+  "keywords": [],
+  "author": "Akurey QA",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "0.27.2",
+    "crypto-js": "4.1.1",
+    "dotenv": "16.0.2",
+    "faker": "6.6.6",
+    "jest-html-reporters": "3.0.11",
+    "mysql": "2.18.1",
+    "prettier": "2.7.1",
+    "typescript": "4.8.3"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "7.18.6",
+    "@commitlint/cli": "17.1.2",
+    "@types/jest": "29.0.1",
+    "@types/mysql": "2.15.21",
+    "@types/node": "18.7.17",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
+    "ajv": "8.11.0",
+    "commitlint-config-jira": "1.6.4",
+    "commitlint-plugin-jira-rules": "1.6.4",
+    "eslint": "8.23.1",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jest": "27.0.4",
+    "husky": "8.0.1",
+    "jest": "29.0.3",
+    "jest-runner-groups": "2.2.0",
+    "lint-staged": "13.0.3",
+    "ts-jest": "29.0.0",
+    "ts-node": "10.9.1"
+  },
+  "lint-staged": {
+    "./**/*.test.{js,ts}": [
+      "eslint --max-warnings 0"
+    ],
+    "./src/**/*.{js,ts}": [
+      "eslint --max-warnings 0"
+    ],
+    ".src/**/*.{ts,js,json,css,md}": [
+      "prettier --write"
+    ]
+  }
+}
