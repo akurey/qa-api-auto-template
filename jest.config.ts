@@ -105,7 +105,7 @@ export default {
     [
       'jest-html-reporters',
       {
-        publicPath: './src/reports',
+        publicPath: './reports',
         filename: 'api-integration.html',
         expand: true,
         openReport: true,
