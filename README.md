@@ -21,8 +21,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```
 BASE_URL='The base URL of the API to test'
-TEMP_MAIL_BASE_URL='If you are using temp mail, this is the API BASE URL'
-TEMP_MAIL_API_KEY='The security key needed to access to the Temp Mail EPs'
 DB_HOST='The host of the QA DB'
 DB_USER='The user enabled for the QA DB'
 DB_PASSWORD='The password of the QA BD user'
