@@ -32,4 +32,4 @@ jobs:
         with:
           name: integration-report
           path: |
-            src/reports/*
+            reports/*
