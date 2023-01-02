@@ -24,7 +24,6 @@ jobs:
       - name: Run Specs
         env:
           BASE_URL: ${{secrets.BASE_URL}} # We take the URL from our declared secrets
-          #BASE_URL: "https://petstore.swagger.io/v2"
         run: npm run test
 
       - name: Upload Jest HTML Report
