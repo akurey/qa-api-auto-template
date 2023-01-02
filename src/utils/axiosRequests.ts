@@ -5,7 +5,7 @@ import axios, { AxiosResponse } from "axios";
 dotenv.config();
 
 const axiosInstance = axios.create({
-  baseURL: "https://petstore.swagger.io/v2",
+  baseURL: process.env.BASE_URL,
 });
 
 export const get = async (
