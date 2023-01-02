@@ -5,7 +5,7 @@ import { faker } from "@faker-js/faker";
 
 describe("should add new pet", () => {
   it("with just pet name", async () => {
-    console.log("holis");
+    console.log(process.env.BASE_URL);
     const petName = faker.name.firstName();
     const { data, status } = await addNewPet(petName);
     expect(status).toEqual(200);
