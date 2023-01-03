@@ -1,4 +1,4 @@
-import Ajv, { AnySchema } from "ajv";
+import Ajv, { AnySchema } from 'ajv';
 
 const ajv = new Ajv({ allErrors: true });
 

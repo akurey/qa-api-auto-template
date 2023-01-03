@@ -1,5 +1,5 @@
 import * as criptoJS from 'crypto-js';
-import {faker} from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 export function generateEmail(): string {
   return faker.internet.email();
@@ -26,4 +26,3 @@ export function generatePassword(): string {
 export function generateZipCode(): string {
   return faker.address.zipCode();
 }
-

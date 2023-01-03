@@ -1,5 +1,5 @@
-const mysql = require("mysql");
-const util = require("util");
+const mysql = require('mysql');
+const util = require('util');
 
 export const config = {
   host: process.env.DB_HOST,

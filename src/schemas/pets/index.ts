@@ -1,6 +1,6 @@
-import Ajv, { AnySchema } from "ajv";
-export * from "./getPet";
-export * from "./addPet";
+import Ajv, { AnySchema } from 'ajv';
+export * from './getPet';
+export * from './addPet';
 
 const ajv = new Ajv({ allErrors: true });
 

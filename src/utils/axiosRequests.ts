@@ -1,6 +1,6 @@
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv';
 
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from 'axios';
 
 dotenv.config();
 
@@ -10,7 +10,7 @@ const axiosInstance = axios.create({
 
 export const get = async (
   relativeUrl: string,
-  params?: unknown
+  params?: unknown,
 ): Promise<AxiosResponse> => {
   try {
     const result = await axiosInstance.get(relativeUrl, { params });
@@ -23,7 +23,7 @@ export const get = async (
 export const post = async (
   relativeUrl: string,
   body: unknown,
-  headers = {}
+  headers = {},
 ): Promise<AxiosResponse> => {
   try {
     const result = await axiosInstance.post(relativeUrl, body, { headers });
