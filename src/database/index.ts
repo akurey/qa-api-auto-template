@@ -1,5 +1,5 @@
-const mysql = require('mysql');
-const util = require('util');
+const mysql = require("mysql");
+const util = require("util");
 
 export const config = {
   host: process.env.DB_HOST,
@@ -8,6 +8,7 @@ export const config = {
   database: process.env.DB_DATABASE_NAME,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const transaction = async (query: string, param = []): Promise<any> => {
   const setUp = mysql.createConnection(config);
   const conn = util.promisify(setUp.query).bind(setUp);

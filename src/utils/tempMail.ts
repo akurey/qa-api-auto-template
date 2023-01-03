@@ -1,15 +1,15 @@
-import { MD5 } from 'crypto-js';
-import { TempMail } from '@interfaces/tempEmail';
-import axios from 'axios';
+import { MD5 } from "crypto-js";
+import { TempMail } from "@interfaces/tempEmail";
+import axios from "axios";
 const headers = {
   headers: {
-    'x-rapidapi-key': process.env.TEMP_MAIL_API_KEY,
+    "x-rapidapi-key": process.env.TEMP_MAIL_API_KEY,
   },
 };
 export async function getDomains(): Promise<string> {
   const { data } = await axios.get(
     `${process.env.TEMP_MAIL_BASE_URL}/domains/`,
-    headers,
+    headers
   );
   return data[0].trim();
 }
@@ -18,7 +18,7 @@ export async function getEmails(email: string, delay = 1): Promise<TempMail[]> {
   email = MD5(email).toString();
   const { data } = await axios.get(
     `${process.env.TEMP_MAIL_BASE_URL}/mail/id/${email}/`,
-    headers,
+    headers
   );
   if (data.error || data.length <= 1) {
     await sleep(delay);
@@ -29,17 +29,16 @@ export async function getEmails(email: string, delay = 1): Promise<TempMail[]> {
 }
 export const readEmail = async (userEmail: string): Promise<string[]> => {
   const emails = await getEmails(userEmail);
-  let results = [];
-  for (let email of emails) {
-      const matches = email.mail_text.match(/\/[0-9]{4}/g);
-      if (matches != null) {
-        results.push(matches[0].replace('/', ''));
-      }
+  const results = [];
+  for (const email of emails) {
+    const matches = email.mail_text.match(/\/[0-9]{4}/g);
+    if (matches != null) {
+      results.push(matches[0].replace("/", ""));
+    }
   }
   return results;
 };
 
-
 function sleep(seconds: number) {
-  return new Promise(resolve => setTimeout(resolve, seconds * 1000));
+  return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 }
