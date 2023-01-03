@@ -32,7 +32,3 @@ export const post = async (
     return error.response;
   }
 };
-
-
-
-

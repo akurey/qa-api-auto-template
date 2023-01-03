@@ -21,10 +21,12 @@ jobs:
           node-version: 16.17.0
       - name: Install Dependencies
         run: npm install
+      - name: Run Linters
+        run: npm run lint
       - name: Run Specs
-        run: npm run test
         env:
           BASE_URL: ${{secrets.BASE_URL}} # We take the URL from our declared secrets
+        run: npm run test
 
       - name: Upload Jest HTML Report
         uses: actions/upload-artifact@v2
@@ -32,4 +34,4 @@ jobs:
         with:
           name: integration-report
           path: |
-            src/reports/*
+            reports/*

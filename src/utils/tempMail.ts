@@ -29,16 +29,15 @@ export async function getEmails(email: string, delay = 1): Promise<TempMail[]> {
 }
 export const readEmail = async (userEmail: string): Promise<string[]> => {
   const emails = await getEmails(userEmail);
-  let results = [];
-  for (let email of emails) {
-      const matches = email.mail_text.match(/\/[0-9]{4}/g);
-      if (matches != null) {
-        results.push(matches[0].replace('/', ''));
-      }
+  const results = [];
+  for (const email of emails) {
+    const matches = email.mail_text.match(/\/[0-9]{4}/g);
+    if (matches != null) {
+      results.push(matches[0].replace('/', ''));
+    }
   }
   return results;
 };
-
 
 function sleep(seconds: number) {
   return new Promise(resolve => setTimeout(resolve, seconds * 1000));

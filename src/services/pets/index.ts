@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ADD_NEW_PET, GET_PET_BY_ID } from '@constants/api/pets';
 import { get, post } from '@utils/axiosRequests';
 

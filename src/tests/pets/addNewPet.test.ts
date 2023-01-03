@@ -3,7 +3,6 @@ import { addPetSchema } from '@schemas/pets';
 import { schemaValidator } from '@schemas/pets/index';
 import { faker } from '@faker-js/faker';
 
-
 describe('should add new pet', () => {
   it('with just pet name', async () => {
     const petName = faker.name.firstName();

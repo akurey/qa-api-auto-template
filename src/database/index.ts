@@ -8,6 +8,7 @@ export const config = {
   database: process.env.DB_DATABASE_NAME,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const transaction = async (query: string, param = []): Promise<any> => {
   const setUp = mysql.createConnection(config);
   const conn = util.promisify(setUp.query).bind(setUp);
