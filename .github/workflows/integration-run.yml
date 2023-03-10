@@ -27,8 +27,7 @@ jobs:
         env:
           BASE_URL: ${{secrets.BASE_URL}} # We take the URL from our declared secrets
         run: npm run test
-
-      - name: Upload Jest HTML Report
+      - name: Upload Jest HTML Report # Upload the html as an artifact on github 
         uses: actions/upload-artifact@v2
         if: always()
         with:
